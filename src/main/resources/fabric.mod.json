@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "woah_coding",
+  "version": "${version}",
+  "name": "woah coding",
+  "description": "h4cker",
+  "authors": [
+    "me"
+  ],
+  "contact": {
+    "repo": "https://github.com/Gamer/woah_coding"
+  },
+  "license": "MIT",
+  "icon": "assets/woah_coding/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.lemo.woah_coding.client.WoahCodingClient"
+    ],
+    "main": [
+      "me.lemo.woah_coding.WoahCoding"
+    ]
+  },
+  "mixins": [
+    "woah_coding.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
