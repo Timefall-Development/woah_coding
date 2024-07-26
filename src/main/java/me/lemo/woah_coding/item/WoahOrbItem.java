@@ -11,5 +11,6 @@ public class WoahOrbItem extends Item {
         ItemGroupEvents.modifyEntriesEvent(WoahCodingItemGroups.WOAH_ITEMS_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(this.getDefaultStack());
         });
+
     }
 }
