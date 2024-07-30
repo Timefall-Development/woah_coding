@@ -17,6 +17,10 @@ public class WoahCodingItems {
             new OutputItem(new Item.Settings()), "output_item"
     );
 
+    public static final Item FADING_CLOUD = itemRegister(
+            new OutputItem(new Item.Settings()), "fading_cloud"
+    );
+
     public static void register(){
 
     }
