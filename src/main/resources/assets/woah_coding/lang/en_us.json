@@ -2,6 +2,6 @@
   "itemGroup.woah_coding"     : "Woah Items",
   "item.woah_coding.woah_orb" : "Woah Orb",
   "item.woah_coding.output_item" : "Output Item",
-  "item.woah_coding.fading_cloud" : "Fading Cloud",
-  "block.woah_coding.fading_block" : "Fading Block"
+  "item.woah_coding.fading_cloud_item" : "Fading Cloud",
+  "block.woah_coding.fading_cloud_block" : "Fading Block"
 }

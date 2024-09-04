@@ -1,5 +1,6 @@
 package me.lemo.woah_coding;
 
+import me.lemo.woah_coding.registry.WoahCodingBlocks;
 import me.lemo.woah_coding.registry.WoahCodingItemGroups;
 import me.lemo.woah_coding.registry.WoahCodingItems;
 import net.fabricmc.api.ModInitializer;
@@ -13,6 +14,7 @@ public class WoahCoding implements ModInitializer {
     @Override
     public void onInitialize() {
         WoahCodingItems.register();
+        WoahCodingBlocks.register();
         WoahCodingItemGroups.register();
     }
 }
