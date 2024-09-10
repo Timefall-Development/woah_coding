@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "woah_coding:item/fading_cloud_item"
+    "layer0": "woah_coding:item/pink_cloud_bottle"
   }
 }

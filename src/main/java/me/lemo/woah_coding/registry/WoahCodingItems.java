@@ -10,7 +10,7 @@ import net.minecraft.registry.Registry;
 
 @SuppressWarnings("unused")
 public class WoahCodingItems {
-    public static final Item WOAH_ORB = itemRegister(
+    public static final Item WOAH_ORB_ITEM = itemRegister(
             new WoahOrbItem(new Item.Settings()), "woah_orb"
     );
 
@@ -19,8 +19,30 @@ public class WoahCodingItems {
     );
 
     public static final Item FADING_CLOUD_ITEM = itemRegister(
-            new FadingCloudItem(new Item.Settings()), "fading_cloud_item"
+            new FadingCloudItem(new Item.Settings()), "fading_cloud"
     );
+
+    public static final Item BLUE_CLOUD_BOTTLE_ITEM = itemRegister(
+            new Item(new Item.Settings()), "blue_cloud_bottle"
+    );
+
+    public static final Item LAVENDER_CLOUD_BOTTLE_ITEM = itemRegister(
+            new Item(new Item.Settings()), "lavender_cloud_bottle"
+    );
+
+    public static final Item LILAC_CLOUD_BOTTLE_ITEM = itemRegister(
+            new Item(new Item.Settings()), "lilac_cloud_bottle"
+    );
+
+    public static final Item PINK_CLOUD_BOTTLE_ITEM = itemRegister(
+            new Item(new Item.Settings()), "pink_cloud_bottle"
+    );
+
+    public static final Item PURPLE_CLOUD_BOTTLE_ITEM = itemRegister(
+            new Item(new Item.Settings()), "purple_cloud_bottle"
+    );
+
+
 
     public static void register(){
 

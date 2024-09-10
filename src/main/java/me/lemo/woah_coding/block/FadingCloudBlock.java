@@ -6,6 +6,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.TransparentBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.registry.tag.EntityTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -94,12 +97,26 @@ public class FadingCloudBlock extends TransparentBlock {
 
     @Override
     public void onEntityLand(BlockView world, Entity entity) {
-        if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.setVelocity(livingEntity.getVelocity().getX(), 0.0d, livingEntity.getVelocity().getZ());
-            livingEntity.velocityModified = true;
-            livingEntity.fallDistance = 0.0f;
+        if (entity instanceof LivingEntity livingEntity && world.getBlockState(livingEntity.getBlockPos().down()).isOf(this)) {
 
+            this.woah_coding$computeFallDamage(livingEntity);
+            livingEntity.setVelocity(livingEntity.getVelocity().getX(), (livingEntity.getVelocity().getY() - livingEntity.getVelocity().getY()), livingEntity.getVelocity().getZ());
+        } else if (entity instanceof LivingEntity livingEntity && !world.getBlockState(livingEntity.getBlockPos().down()).isOf(this)) {
+            EntityAttributeInstance entityAttributeInstance = ((LivingEntity)entity).getAttributeInstance(EntityAttributes.GENERIC_FALL_DAMAGE_MULTIPLIER);
+            if (entityAttributeInstance != null)
+
+                entityAttributeInstance.setBaseValue(1.0f);
         }
+    }
+
+    protected void woah_coding$computeFallDamage(LivingEntity livingEntity) {
+        if (livingEntity.getType().isIn(EntityTypeTags.FALL_DAMAGE_IMMUNE)) {
+            return;
+        }
+        EntityAttributeInstance entityAttributeInstance = livingEntity.getAttributeInstance(EntityAttributes.GENERIC_FALL_DAMAGE_MULTIPLIER);
+        if (entityAttributeInstance != null )
+
+            entityAttributeInstance.setBaseValue(0.0f);
     }
 
     @SuppressWarnings("all")
@@ -108,4 +125,3 @@ public class FadingCloudBlock extends TransparentBlock {
 
     }
 }
-
