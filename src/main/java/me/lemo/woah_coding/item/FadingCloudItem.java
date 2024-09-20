@@ -7,6 +7,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -25,6 +27,8 @@ public class FadingCloudItem extends Item {
         serverWorld.setBlockState(user.getBlockPos().down(), WoahCodingBlocks.FADING_CLOUD.getDefaultState());
             if (!user.isCreative())
                 user.getStackInHand(hand).damage(1, user, EquipmentSlot.MAINHAND);
+            if (!user.isCreative() && user.getStackInHand(hand).getDamage() <= 0)
+                serverWorld.playSound(null, user.getBlockPos(), SoundEvents.BLOCK_RESPAWN_ANCHOR_DEPLETE.value(), SoundCategory.BLOCKS, 1.0F, 1.0F);
             return new TypedActionResult<>(ActionResult.success(world.isClient), user.getStackInHand(hand));
         }
         return new TypedActionResult<>(ActionResult.PASS, user.getStackInHand(hand));
@@ -32,11 +36,11 @@ public class FadingCloudItem extends Item {
 
 }
 
-/*TODO
-   ADD feature that lets you use a bottle in the sky above the build limit that gives you the cloud
+/*TODO ✓
+   ADD feature that lets you use a bottle in the sky above the build limit that gives you the cloud ✓
    ADD cloud bottles ✓
    ADD feature to not take fall damage when falling on the block ✓
-   CHANGE item break sound
+   CHANGE item break sound ✓
    FIGURE OUT why i jump too high ✓
  */
 

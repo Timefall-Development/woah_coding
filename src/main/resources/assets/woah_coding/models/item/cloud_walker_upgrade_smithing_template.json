@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "woah_coding:item/cloud_walker_upgrade_smithing_template"
-  }
-}

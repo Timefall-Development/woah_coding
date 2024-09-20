@@ -2,7 +2,7 @@
   "asset_name": "cloud_walker",
   "description": {
     "color": "#DEADFF",
-    "translate": "Cloud Walker"
+    "translate": "trim_material.woah_coding.cloud_walker"
   },
   "ingredient": "woah_coding:fading_cloud",
   "item_model_index": 1.0

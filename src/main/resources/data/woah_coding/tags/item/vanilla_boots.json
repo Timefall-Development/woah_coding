@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "minecraft:leather_boots",
-    "minecraft:gold_boots",
-    "minecraft:chain_boots",
+    "minecraft:golden_boots",
+    "minecraft:chainmail_boots",
     "minecraft:iron_boots",
     "minecraft:diamond_boots",
     "minecraft:netherite_boots"

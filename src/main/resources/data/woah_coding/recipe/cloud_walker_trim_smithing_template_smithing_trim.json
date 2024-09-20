@@ -2,7 +2,7 @@
   "type": "minecraft:smithing_trim",
   "category": "equipment",
   "template": {
-    "item": "woah_coding:cloud_walker_upgrade_smithing_template"
+    "item": "woah_coding:cloud_walker_armor_trim_smithing_template"
   },
   "base": {
     "tag": "woah_coding:vanilla_boots"

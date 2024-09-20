@@ -100,7 +100,9 @@ public class FadingCloudBlock extends TransparentBlock {
         if (entity instanceof LivingEntity livingEntity && world.getBlockState(livingEntity.getBlockPos().down()).isOf(this)) {
 
             this.woah_coding$computeFallDamage(livingEntity);
-            livingEntity.setVelocity(livingEntity.getVelocity().getX(), (livingEntity.getVelocity().getY() - livingEntity.getVelocity().getY()), livingEntity.getVelocity().getZ());
+            //TODO: Figure out how to properly prevent Y velocity from being too high (low? it is going below -0.16, which is too fast)
+            if (livingEntity.getVelocity().getY() < -0.16)
+                livingEntity.setVelocity(livingEntity.getVelocity().getX(), -0.16, livingEntity.getVelocity().getZ());
         } else if (entity instanceof LivingEntity livingEntity && !world.getBlockState(livingEntity.getBlockPos().down()).isOf(this)) {
             EntityAttributeInstance entityAttributeInstance = ((LivingEntity)entity).getAttributeInstance(EntityAttributes.GENERIC_FALL_DAMAGE_MULTIPLIER);
             if (entityAttributeInstance != null)

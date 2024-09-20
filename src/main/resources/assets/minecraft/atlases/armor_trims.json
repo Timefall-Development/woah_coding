@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "type": "paletted_permutations",
+      "textures": [
+        "woah_coding:trims/models/armor/cloud_walker",
+        "woah_coding:trims/models/armor/cloud_walker_leggings"
+      ],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "cloud_walker": "woah_coding:trims/color_palettes/cloud_walker"
+
+      }
+    }
+  ]
+}

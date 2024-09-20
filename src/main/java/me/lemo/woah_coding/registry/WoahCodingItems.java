@@ -5,6 +5,7 @@ import me.lemo.woah_coding.item.FadingCloudItem;
 import me.lemo.woah_coding.item.OutputItem;
 import me.lemo.woah_coding.item.WoahOrbItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SmithingTemplateItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
@@ -42,8 +43,8 @@ public class WoahCodingItems {
             new Item(new Item.Settings()), "purple_cloud_bottle"
     );
 
-    public static final Item CLOUD_WALKER_UPGRADE_SMITHING_TEMPLATE = itemRegister(
-            new Item(new Item.Settings()), "cloud_walker_upgrade_smithing_template"
+    public static final Item CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE = smithingTemplateRegister(
+            "cloud_walker_armor_trim_smithing_template"
     );
 
 
@@ -56,5 +57,11 @@ public class WoahCodingItems {
 
     public static Item itemRegister(Item item, String id){
         return Registry.register(Registries.ITEM, WoahCoding.id(id), item);
+
+
+    }
+
+    public static Item smithingTemplateRegister(String id){
+        return Registry.register(Registries.ITEM, WoahCoding.id(id), SmithingTemplateItem.of(WoahCoding.id(id)));
     }
 }
