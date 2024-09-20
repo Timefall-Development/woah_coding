@@ -1,0 +1,9 @@
+{
+  "asset_name": "cloud_walker",
+  "description": {
+    "color": "#DEADFF",
+    "translate": "Cloud Walker"
+  },
+  "ingredient": "woah_coding:fading_cloud",
+  "item_model_index": 1.0
+}

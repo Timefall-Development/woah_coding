@@ -34,9 +34,9 @@ public class FadingCloudItem extends Item {
 
 /*TODO
    ADD feature that lets you use a bottle in the sky above the build limit that gives you the cloud
-   ADD cloud bottle
+   ADD cloud bottles ✓
    ADD feature to not take fall damage when falling on the block ✓
    CHANGE item break sound
-   FIGURE OUT why i jump too high
+   FIGURE OUT why i jump too high ✓
  */
 

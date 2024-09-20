@@ -1,5 +1,6 @@
 package me.lemo.woah_coding.mixin;
 
+import me.lemo.woah_coding.registry.WoahCodingItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.GlassBottleItem;
 import net.minecraft.item.ItemStack;
@@ -18,57 +19,96 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(GlassBottleItem.class)
 public class GlassBottleItemMixin {
-    @Inject(method = "use", at = @At(value = "TAIL"))
-    public void woah_coding$use(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
+
+    @Unique
+    float ultraColdMin = -2.0f;
+    @Unique
+    float ultraColdMax = 0.19f;
+
+    @Unique
+    float coldMin = 0.2f;
+    @Unique
+    float coldMax = 0.59f;
+
+    @Unique
+    float warmMin = 0.6f;
+    @Unique
+    float warmMax = 0.79f;
+
+    @Unique
+    float hotMin = 0.8f;
+    @Unique
+    float hotMax = 1.99f;
+
+    @Unique
+    float ultraHot = 2.0f;
+
+    @Inject(method = "use", at = @At(value = "HEAD"), cancellable = true)
+    public void woah_coding$collectCloudsOnUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
+        if (world.isClient())
+            return;
+
         GlassBottleItem glassBottleItem = (GlassBottleItem) (Object) this;
         BlockHitResult blockHitResult = ItemInvoker.callRaycast(world, user, RaycastContext.FluidHandling.SOURCE_ONLY);
-
-        float ultraColdMin = -2.0f;
-        float ultraColdMax = 0.19f;
-
-        float coldMin = 0.2f;
-        float coldMax = 0.59f;
-
-        float warmMin = 0.6f;
-        float warmMax = 0.79f;
-
-        float hotMin = 0.8f;
-        float hotMax = 1.99f;
-
-        float ultraHot = 2.0f;
+        ItemStack heldStack = user.getStackInHand(hand);
 
 
-        cir.getReturnValue();
+        float temperature = user.getWorld().getBiome(user.getBlockPos()).value().getTemperature();
+
+        ItemStack cloudBottleItemStack = getCloudBottleColorFromTemperature(temperature);
+
+        if (user.getY() >= 330 && isInOverworld(user)){
+            cir.setReturnValue(TypedActionResult.success(this.woah_coding$fill(heldStack, user, cloudBottleItemStack)));
+        } else {
+            cir.setReturnValue(TypedActionResult.consume(heldStack));
+        }
     }
 
-    
+
+    @Unique
+    private ItemStack getCloudBottleColorFromTemperature(float temperature){
+        if (temperature >= ultraColdMin && temperature <= ultraColdMax){
+            return new ItemStack(WoahCodingItems.BLUE_CLOUD_BOTTLE_ITEM);
+
+        } else if (temperature >= coldMin && temperature <= coldMax){
+            return new ItemStack(WoahCodingItems.LAVENDER_CLOUD_BOTTLE_ITEM);
+
+        } else if (temperature >= warmMin && temperature <= warmMax){
+            return new ItemStack(WoahCodingItems.LILAC_CLOUD_BOTTLE_ITEM);
+
+        } else if (temperature >= hotMin && temperature <= hotMax){
+            return new ItemStack(WoahCodingItems.PINK_CLOUD_BOTTLE_ITEM);
+
+        }else if (temperature >= ultraHot) {
+            return new ItemStack(WoahCodingItems.PURPLE_CLOUD_BOTTLE_ITEM);
+        }
+        return ItemStack.EMPTY;
+    }
+
     @Unique
     protected ItemStack woah_coding$fill(ItemStack stack, PlayerEntity player, ItemStack outputStack) {
         GlassBottleItem glassBottleItem = (GlassBottleItem) (Object) this;
 
         player.incrementStat(Stats.USED.getOrCreateStat(glassBottleItem));
         return ItemUsage.exchangeStack(stack, player, outputStack);
+
+    }
+
+    @Unique
+    private static boolean isInOverworld(PlayerEntity playerEntity){
+        return playerEntity.getWorld().getDimension().bedWorks();
     }
 }
 
 /* TODO:
-    Check if above y330
-    Check if on a server
+    Check if above y330 ✓
+    Check if your in the overworld ✓
+    Check if on a server ✓
     Use bottle fill sound
     Fill empty bottle with correct cloud bottle
     5 Items for cloud bottles ✓
     Recipe for fading cloud ✓
-    5 biome groups
+    5 biome groups ✓
     to get biome temp the player is in: playerEntity.getWorld().getBiome(playerEntity.getBlockPos()).value().getTemperature()
 
 */
-/*
- Biome Temp reference
-
- Ultra Cold. -2.0 - 0.19
- Cold. 0.2 - 0.59
- Warm. 0.6 - 0.79
- Hot. 0.8 - 0.99
- Ultra Hot. 1.0 - 2.0
-
- */

@@ -1,0 +1,16 @@
+{
+
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "tag": "woah_coding:vanilla_boots"
+  },
+  "addition": {
+    "item": "woah:coding"
+  },
+  "result": {
+    "tag": "woah_coding:vanilla_boots"
+  },
+  "template": {
+    "item": "woah_coding:fading_cloud"
+  }
+}

@@ -42,6 +42,12 @@ public class WoahCodingItems {
             new Item(new Item.Settings()), "purple_cloud_bottle"
     );
 
+    public static final Item CLOUD_WALKER_UPGRADE_SMITHING_TEMPLATE = itemRegister(
+            new Item(new Item.Settings()), "cloud_walker_upgrade_smithing_template"
+    );
+
+
+
 
 
     public static void register(){
