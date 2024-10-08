@@ -1,7 +1,16 @@
 {
-  "itemGroup.woah_coding"     : "Woah Items",
-  "item.woah_coding.woah_orb" : "Woah Orb",
-  "item.woah_coding.output_item" : "Output Item",
-  "item.woah_coding.fading_cloud" : "Fading Cloud",
-  "block.woah_coding.fading_block" : "Fading Block"
+  "itemGroup.woah_coding": "Woah Items",
+  "item.woah_coding.woah_orb": "Woah Orb",
+  "item.woah_coding.output_item": "Output Item",
+  "item.woah_coding.fading_cloud": "Fading Cloud",
+  "item.woah_coding.pink_cloud_bottle": "Bottled Cloud",
+  "item.woah_coding.lavender_cloud_bottle": "Bottled Cloud",
+  "item.woah_coding.lilac_cloud_bottle": "Bottled Cloud",
+  "item.woah_coding.purple_cloud_bottle": "Bottled Cloud",
+  "item.woah_coding.blue_cloud_bottle": "Bottled Cloud",
+  "item.woah_coding.cloud_walker_armor_trim_smithing_template": "Smithing Template",
+  "block.woah_coding.fading_cloud_block": "Fading Block",
+  "trim_pattern.woah_coding.cloud_walker_armor_trim_smithing_template": "Cloud Walker Armor Trim",
+  "tag.item.woah_coding.cloud_bottles": "Cloud Bottles",
+  "tag.item.woah_coding.vanilla_boots": "Vanilla Boots"
 }

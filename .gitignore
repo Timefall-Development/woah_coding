@@ -332,7 +332,8 @@
 /build/classes/java/main/me/lemo/woah_coding/client/WoahCodingClient.class
 /build/classes/java/main/me/lemo/woah_coding/registry/WoahCodingItems.class
 /build/tmp/compileJava/compileTransaction/stash-dir/WoahCodingItems.class.uniqueId0
+/build/
 /run/
 /.gradle/
-/.idea/
-/build/
+/.idea/uiDesigner.xml
+/.idea/vcs.xml
