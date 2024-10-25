@@ -1,5 +1,6 @@
 package me.lemo.woah_coding;
 
+import me.lemo.woah_coding.registry.WoahCodingBlockEntities;
 import me.lemo.woah_coding.registry.WoahCodingBlocks;
 import me.lemo.woah_coding.registry.WoahCodingItemGroups;
 import me.lemo.woah_coding.registry.WoahCodingItems;
@@ -15,6 +16,7 @@ public class WoahCoding implements ModInitializer {
     public void onInitialize() {
         WoahCodingItems.register();
         WoahCodingBlocks.register();
+        WoahCodingBlockEntities.register();
         WoahCodingItemGroups.register();
     }
 }

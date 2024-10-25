@@ -47,6 +47,23 @@ public class WoahCodingItems {
             "cloud_walker_armor_trim_smithing_template"
     );
 
+    public static final Item BRONZE_INGOT = itemRegister(
+            new Item(new Item.Settings()), "bronze_ingot"
+    );
+
+    public static final Item TIN_INGOT = itemRegister(
+            new Item(new Item.Settings()), "tin_ingot"
+    );
+
+    public static final Item ALUMINUM_INGOT = itemRegister(
+            new Item(new Item.Settings()), "aluminum_ingot"
+    );
+
+    public static final Item ANCIENT_INSTRUCTIONS = itemRegister(
+            new Item(new Item.Settings()), "ancient_instructions"
+    );
+
+
 
 
 
