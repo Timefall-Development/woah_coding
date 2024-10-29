@@ -1,6 +1,7 @@
 package me.lemo.woah_coding.registry;
 
 import me.lemo.woah_coding.WoahCoding;
+import me.lemo.woah_coding.block.BeeInABoxBlock;
 import me.lemo.woah_coding.block.CreeperInABoxBlock;
 import me.lemo.woah_coding.block.FadingCloudBlock;
 import net.minecraft.block.AbstractBlock;
@@ -23,6 +24,10 @@ public class WoahCodingBlocks {
     );
     public static final CreeperInABoxBlock CREEPER_IN_A_BOX_BLOCK = registerBlockWithItem(
             new CreeperInABoxBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)),"creeper_in_a_box",
+            new Item.Settings()
+    );
+    public static final BeeInABoxBlock BEE_IN_A_BOX_BLOCK = registerBlockWithItem(
+            new BeeInABoxBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)),"bee_in_a_box",
             new Item.Settings()
     );
 
