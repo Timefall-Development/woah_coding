@@ -2,11 +2,9 @@ package me.lemo.woah_coding.item;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class OutputItem extends Item {
@@ -46,7 +44,7 @@ public class OutputItem extends Item {
 
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
 
         user.sendMessage(
                 Text.literal(
@@ -67,7 +65,7 @@ public class OutputItem extends Item {
                         + "Division is as simple as Multiplication. I can divide " + (int) quotientFloat1 + " by " + (int) quotientFloat2 + " and get " + quotient + ".\n"
                         + "Finding the remainder is also simple enough. If I divide " + (int) quotientFloat1 + " by " + (int) quotientFloat2 + ", the remainder is " + remainder + "."
         );
-        return new TypedActionResult<>(ActionResult.PASS, user.getStackInHand(hand));
+        return ActionResult.PASS;
 
     }
 }

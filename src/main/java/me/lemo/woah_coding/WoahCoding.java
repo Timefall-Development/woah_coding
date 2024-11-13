@@ -1,9 +1,6 @@
 package me.lemo.woah_coding;
 
-import me.lemo.woah_coding.registry.WoahCodingBlockEntities;
-import me.lemo.woah_coding.registry.WoahCodingBlocks;
-import me.lemo.woah_coding.registry.WoahCodingItemGroups;
-import me.lemo.woah_coding.registry.WoahCodingItems;
+import me.lemo.woah_coding.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 
@@ -14,6 +11,7 @@ public class WoahCoding implements ModInitializer {
     }
     @Override
     public void onInitialize() {
+        WoahCodingEvents.addListeners();
         WoahCodingItems.register();
         WoahCodingBlocks.register();
         WoahCodingBlockEntities.register();

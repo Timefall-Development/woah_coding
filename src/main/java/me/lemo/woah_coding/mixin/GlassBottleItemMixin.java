@@ -6,8 +6,8 @@ import net.minecraft.item.GlassBottleItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.stat.Stats;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org .spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(GlassBottleItem.class)
 public class GlassBottleItemMixin {
@@ -44,7 +44,7 @@ public class GlassBottleItemMixin {
     float ultraHot = 2.0f;
 
     @Inject(method = "use", at = @At(value = "HEAD"), cancellable = true)
-    public void woah_coding$collectCloudsOnUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
+    public void woah_coding$collectCloudsOnUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         if (world.isClient())
             return;
 
@@ -58,9 +58,9 @@ public class GlassBottleItemMixin {
         ItemStack cloudBottleItemStack = getCloudBottleColorFromTemperature(temperature);
 
         if (user.getY() >= 330 && isInOverworld(user)){
-            cir.setReturnValue(TypedActionResult.success(this.woah_coding$fill(heldStack, user, cloudBottleItemStack)));
+            cir.setReturnValue(ActionResult.SUCCESS.withNewHandStack(this.woah_coding$fill(heldStack, user, cloudBottleItemStack)));
         } else {
-            cir.setReturnValue(TypedActionResult.consume(heldStack));
+            cir.setReturnValue(ActionResult.CONSUME);
         }
     }
 
@@ -104,11 +104,11 @@ public class GlassBottleItemMixin {
     Check if above y330 ✓
     Check if your in the overworld ✓
     Check if on a server ✓
-    Use bottle fill sound
-    Fill empty bottle with correct cloud bottle
+    Use bottle fill sound ✓
+    Fill empty bottle with correct cloud bottle ✓
     5 Items for cloud bottles ✓
     Recipe for fading cloud ✓
     5 biome groups ✓
-    to get biome temp the player is in: playerEntity.getWorld().getBiome(playerEntity.getBlockPos()).value().getTemperature()
+    to get biome temp the player is in: playerEntity.getWorld().getBiome(playerEntity.getBlockPos()).value().getTemperature() ✓
 
 */

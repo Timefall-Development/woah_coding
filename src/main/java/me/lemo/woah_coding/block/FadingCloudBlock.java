@@ -61,7 +61,7 @@ public class FadingCloudBlock extends TransparentBlock {
 
     protected void fade(World world, BlockPos pos) {
         world.setBlockState(pos, getUnfadedState());
-        world.updateNeighbor(pos, getUnfadedState().getBlock(), pos);
+        world.updateNeighbor(pos, getUnfadedState().getBlock(), null);
     }
 
     private boolean increaseAge(BlockState state, World world, BlockPos pos) {
@@ -100,11 +100,11 @@ public class FadingCloudBlock extends TransparentBlock {
         if (entity instanceof LivingEntity livingEntity && world.getBlockState(livingEntity.getBlockPos().down()).isOf(this)) {
 
             this.woah_coding$computeFallDamage(livingEntity);
-            //TODO: Figure out how to properly prevent Y velocity from being too high (low? it is going below -0.16, which is too fast)
+            //TODO: Figure out how to properly prevent Y velocity from being too high (low? it is going below -0.16, which is too fast) ✓
             if (livingEntity.getVelocity().getY() < -0.16)
                 livingEntity.setVelocity(livingEntity.getVelocity().getX(), -0.16, livingEntity.getVelocity().getZ());
         } else if (entity instanceof LivingEntity livingEntity && !world.getBlockState(livingEntity.getBlockPos().down()).isOf(this)) {
-            EntityAttributeInstance entityAttributeInstance = ((LivingEntity)entity).getAttributeInstance(EntityAttributes.GENERIC_FALL_DAMAGE_MULTIPLIER);
+            EntityAttributeInstance entityAttributeInstance = ((LivingEntity)entity).getAttributeInstance(EntityAttributes.FALL_DAMAGE_MULTIPLIER);
             if (entityAttributeInstance != null)
 
                 entityAttributeInstance.setBaseValue(1.0f);
@@ -115,7 +115,7 @@ public class FadingCloudBlock extends TransparentBlock {
         if (livingEntity.getType().isIn(EntityTypeTags.FALL_DAMAGE_IMMUNE)) {
             return;
         }
-        EntityAttributeInstance entityAttributeInstance = livingEntity.getAttributeInstance(EntityAttributes.GENERIC_FALL_DAMAGE_MULTIPLIER);
+        EntityAttributeInstance entityAttributeInstance = livingEntity.getAttributeInstance(EntityAttributes.FALL_DAMAGE_MULTIPLIER);
         if (entityAttributeInstance != null )
 
             entityAttributeInstance.setBaseValue(0.0f);
