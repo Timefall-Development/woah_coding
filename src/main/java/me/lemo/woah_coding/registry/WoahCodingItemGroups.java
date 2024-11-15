@@ -17,10 +17,10 @@ public class WoahCodingItemGroups {
     );
 
     public static final ItemGroup WOAH_ITEMS_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(WoahCodingItems.WOAH_ORB_ITEM))
+            .icon(() -> new ItemStack(WoahCodingItems.INTERDIMENSIONAL_ORB_ITEM))
             .displayName(Text.translatable("itemGroup." + WoahCoding.MOD_ID))
             .entries(((displayContext, entries) -> {
-                entries.add(WoahCodingItems.WOAH_ORB_ITEM);
+                entries.add(WoahCodingItems.INTERDIMENSIONAL_ORB_ITEM);
                 entries.add(WoahCodingItems.OUTPUT_ITEM);
                 entries.add(WoahCodingItems.FADING_CLOUD_ITEM);
                 entries.add(WoahCodingItems.PINK_CLOUD_BOTTLE_ITEM);

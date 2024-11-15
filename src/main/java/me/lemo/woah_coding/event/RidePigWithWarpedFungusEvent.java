@@ -24,11 +24,12 @@ public class RidePigWithWarpedFungusEvent {
                     Entity entity = player.getRootVehicle();
                     if (entity instanceof PigEntity pigEntity) {
                         pigEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 100, 5, false, false));
-                        if (!user.isCreative())
-                            user.getStackInHand(hand).damage(1, user, EquipmentSlot.MAINHAND);
-                        if (!user.isCreative() && user.getStackInHand(hand).getDamage() <= 0)
-                            player.swingHand();
+                        if (!player.isCreative())
+                            player.getStackInHand(hand).damage(1, player, EquipmentSlot.MAINHAND);
+                        if (!player.isCreative() && player.getStackInHand(hand).getDamage() <= 0) {
+                            player.swingHand(hand, true);
                             return ActionResult.SUCCESS;
+                        }
                     }
                 }
             }
@@ -36,5 +37,4 @@ public class RidePigWithWarpedFungusEvent {
         });
     }
 }
-
-// tried to add hand waving and durability thingy but it wasnt working :/
+// TODO tried to add hand waving and durability thingy but it wasnt working ✓
