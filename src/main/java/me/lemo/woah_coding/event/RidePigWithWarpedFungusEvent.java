@@ -24,7 +24,7 @@ public class RidePigWithWarpedFungusEvent {
                     if (entity instanceof PigEntity pigEntity) {
                         pigEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 100, 5, false, false));
                         if (!player.isCreative()) {
-                            player.getStackInHand(hand).damage(1, player, EquipmentSlot.MAINHAND);
+                            player.getStackInHand(hand).damage(1, Items.FISHING_ROD, player, EquipmentSlot.MAINHAND);
                             return new ActionResult.Success(ActionResult.SwingSource.SERVER, new ActionResult.ItemContext(true, null));
                         }
                     }
