@@ -14,11 +14,11 @@ import net.minecraft.registry.RegistryKeys;
 @SuppressWarnings("unused")
 public class WoahCodingItems {
     public static final Item WOAH_ORB_ITEM = itemRegister(
-            new WoahOrbItem(new Item.Settings()), "woah_orb"
+            new WoahOrbItem(new Item.Settings().registryKey(getItemRegistryKey("woah_orb"))), "woah_orb"
     );
 
     public static final Item OUTPUT_ITEM = itemRegister(
-            new OutputItem(new Item.Settings()), "output_item"
+            new OutputItem(new Item.Settings().registryKey(getItemRegistryKey("output_item"))), "output_item"
     );
 
     public static final Item FADING_CLOUD_ITEM = itemRegister(
@@ -46,7 +46,7 @@ public class WoahCodingItems {
     );
 
     public static final Item CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE = smithingTemplateRegister(
-            "cloud_walker_armor_trim_smithing_template"
+            "cloud_walker_armor_trim_smithing_template", new Item.Settings().registryKey(getItemRegistryKey("cloud_walker_armor_trim_smithing_template"))
     );
 
     public static final Item BRONZE_INGOT = itemRegister(
@@ -86,8 +86,8 @@ public class WoahCodingItems {
 
     }
 
-    public static Item smithingTemplateRegister(String id){
-        return Registry.register(Registries.ITEM, WoahCoding.id(id), SmithingTemplateItem.of(WoahCoding.id(id)));
+    public static Item smithingTemplateRegister(String id, Item.Settings settings){
+        return Registry.register(Registries.ITEM, WoahCoding.id(id), SmithingTemplateItem.of(settings));
     }
 
     public static RegistryKey<Item> getItemRegistryKey(String id){
