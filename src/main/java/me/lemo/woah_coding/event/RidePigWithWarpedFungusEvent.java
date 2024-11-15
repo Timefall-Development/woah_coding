@@ -9,14 +9,13 @@ import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 
 public class RidePigWithWarpedFungusEvent {
     public static void registerEvent() {
 
         UseItemCallback.EVENT.register((player, world, hand) -> {
-            if (!world.isClient() && world instanceof ServerWorld) {
+            if (!world.isClient()) {
                 ItemStack heldItem = player.getStackInHand(hand);
                 Item pigUpgradeItem = Items.WARPED_FUNGUS_ON_A_STICK;
 
@@ -24,11 +23,9 @@ public class RidePigWithWarpedFungusEvent {
                     Entity entity = player.getRootVehicle();
                     if (entity instanceof PigEntity pigEntity) {
                         pigEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 100, 5, false, false));
-                        if (!player.isCreative())
-                            player.getStackInHand(hand).damage(1, player, EquipmentSlot.MAINHAND);
-                        if (!player.isCreative() && player.getStackInHand(hand).getDamage() <= 0) {
-                            player.swingHand(hand, true);
-                            return ActionResult.SUCCESS;
+                        if (!player.isCreative()) {
+                            player.getStackInHand(hand).damage(1, Items.FISHING_ROD, player, EquipmentSlot.MAINHAND);
+                            return new ActionResult.Success(ActionResult.SwingSource.SERVER, new ActionResult.ItemContext(true, null));
                         }
                     }
                 }
@@ -37,4 +34,3 @@ public class RidePigWithWarpedFungusEvent {
         });
     }
 }
-// TODO tried to add hand waving and durability thingy but it wasnt working ✓

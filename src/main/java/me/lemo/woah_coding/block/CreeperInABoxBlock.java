@@ -25,10 +25,10 @@ public class CreeperInABoxBlock extends Block implements BlockEntityProvider {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof CreeperInABoxBlockEntity creeperInABoxBlockEntity){
                 creeperInABoxBlockEntity.incrementPopCounter();
-                player.sendMessage(Text.literal("Pop Counter: " + creeperInABoxBlockEntity.getPopCounter()));
+                player.sendMessage(Text.literal("Pop Counter: " + creeperInABoxBlockEntity.getPopCounter()), true);
             }
         }
-        return ActionResult.success(world.isClient());
+        return ActionResult.SUCCESS;
     }
 
     @Nullable

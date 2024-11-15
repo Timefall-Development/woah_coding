@@ -46,7 +46,7 @@ public class WoahCodingItems {
     );
 
     public static final Item CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE = smithingTemplateRegister(
-            "cloud_walker_armor_trim_smithing_template"
+            "cloud_walker_armor_trim_smithing_template", new Item.Settings().registryKey(getItemRegistryKey("cloud_walker_armor_trim_smithing_template"))
     );
 
     public static final Item BRONZE_INGOT = itemRegister(
@@ -86,8 +86,8 @@ public class WoahCodingItems {
 
     }
 
-    public static Item smithingTemplateRegister(String id){
-        return Registry.register(Registries.ITEM, WoahCoding.id(id), SmithingTemplateItem.of(WoahCoding.id(id)));
+    public static Item smithingTemplateRegister(String id, Item.Settings settings){
+        return Registry.register(Registries.ITEM, WoahCoding.id(id), SmithingTemplateItem.of(settings));
     }
 
     public static RegistryKey<Item> getItemRegistryKey(String id){

@@ -26,12 +26,10 @@ public class WoahCodingBlocks {
             "fading_cloud_block"
     );
     public static final CreeperInABoxBlock CREEPER_IN_A_BOX_BLOCK = registerBlockWithItem(
-            new CreeperInABoxBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)),"creeper_in_a_box",
-            new Item.Settings()
+            new CreeperInABoxBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK).registryKey(getBlockRegistryKey("creeper_in_a_box"))),"creeper_in_a_box"
     );
     public static final BeeInABoxBlock BEE_IN_A_BOX_BLOCK = registerBlockWithItem(
-            new BeeInABoxBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)),"bee_in_a_box",
-            new Item.Settings()
+            new BeeInABoxBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK).registryKey(getBlockRegistryKey("bee_in_a_box"))),"bee_in_a_box"
     );
 
     public static void register(){
