@@ -1,5 +1,6 @@
 {
   "itemGroup.woah_coding": "Woah Items",
+
   "item.woah_coding.interdimensional_orb": "Interdimensional Orb",
   "item.woah_coding.output_item": "Output Item",
   "item.woah_coding.fading_cloud": "Fading Cloud",
@@ -9,8 +10,17 @@
   "item.woah_coding.purple_cloud_bottle": "Bottled Cloud",
   "item.woah_coding.blue_cloud_bottle": "Bottled Cloud",
   "item.woah_coding.cloud_walker_armor_trim_smithing_template": "Smithing Template",
+
+  "item.minecraft.potion.effect.iron_maiden_potion": "Iron Maiden Potion",
+  "item.minecraft.splash_potion.effect.iron_maiden_potion": "Iron Maiden Splash Potion",
+  "item.minecraft.lingering_potion.effect.iron_maiden_potion": "Iron Maiden Lingering Potion",
+
   "block.woah_coding.fading_cloud_block": "Fading Block",
+
+  "effect.woah_coding.iron_maiden_effect": "Iron Maiden",
+
   "trim_pattern.woah_coding.cloud_walker_armor_trim_smithing_template": "Cloud Walker Armor Trim",
+
   "tag.item.woah_coding.cloud_bottles": "Cloud Bottles",
   "tag.item.woah_coding.vanilla_boots": "Vanilla Boots"
 }
