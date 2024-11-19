@@ -17,9 +17,9 @@ public class IronMaidenEffect extends StatusEffect {
         if (entity.getHealth() > 0){
             // Whilst inside an iron maiden, the individual would have their movements restricted, and they'd be blinded.
             //  As such, we apply status effects that would simulate that experience.
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 200, amplifier));
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, amplifier));
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 200, amplifier));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE));
 
             // We get the absolute values of the entity's movement speed so that we don't have to account for negative
             //  numbers in our maths
@@ -36,8 +36,8 @@ public class IronMaidenEffect extends StatusEffect {
                 //  is in values of 0.0X or 0.00X, so we need to use the multiplier to get to a value that is at least 1.
                 //  In short: the more the player moves, the more damage they take.
                 entity.damage(world, entity.getDamageSources().cactus(), (float) entityMovementSpeedAverage * 10.0F);
-            } else if (world.getTime() % 20 == 0) {
-                // If the player is not moving, they take damage every 20 ticks
+            } else if (world.getTime() % 100 == 0) {
+                // If the player is not moving, they take damage every 100 ticks or 5 seconds
                 entity.damage(world, entity.getDamageSources().cactus(), 1.0f);
             }
         }
