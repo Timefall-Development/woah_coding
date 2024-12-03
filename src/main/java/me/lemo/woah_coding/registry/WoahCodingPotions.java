@@ -12,7 +12,6 @@ import net.minecraft.registry.entry.RegistryEntry;
 
 public class WoahCodingPotions {
 
-    @SuppressWarnings("unused")
     public static final RegistryEntry<Potion> IRON_MAIDEN_POTION = potionRegister(
             "iron_maiden_potion",
             new Potion(
@@ -20,6 +19,28 @@ public class WoahCodingPotions {
                     new StatusEffectInstance(
                             WoahCodingEffects.IRON_MAIDEN_EFFECT,
                             1200,
+                            0
+                    )
+            )
+    );
+    public static final RegistryEntry<Potion> STRONG_IRON_MAIDEN_POTION = potionRegister(
+            "strong_iron_maiden_potion",
+            new Potion(
+                    "iron_maiden_potion",
+                    new StatusEffectInstance(
+                            WoahCodingEffects.IRON_MAIDEN_EFFECT,
+                            600,
+                            1
+                    )
+            )
+    );
+    public static final RegistryEntry<Potion> LONG_IRON_MAIDEN_POTION = potionRegister(
+            "long_iron_maiden_potion",
+            new Potion(
+                    "iron_maiden_potion",
+                    new StatusEffectInstance(
+                            WoahCodingEffects.IRON_MAIDEN_EFFECT,
+                            2400,
                             0
                     )
             )
@@ -36,6 +57,8 @@ public class WoahCodingPotions {
             // Adds the recipe of the Iron Maiden Potion which uses Iron Bars in the top of the brewing stand and
             //  Awkward potion(s) in the bottom
             builder.registerPotionRecipe(Potions.AWKWARD, Items.IRON_BARS, IRON_MAIDEN_POTION);
+            builder.registerPotionRecipe(IRON_MAIDEN_POTION, Items.REDSTONE, LONG_IRON_MAIDEN_POTION);
+            builder.registerPotionRecipe(IRON_MAIDEN_POTION, Items.GLOWSTONE_DUST, STRONG_IRON_MAIDEN_POTION);
         });
     }
 }

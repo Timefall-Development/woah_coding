@@ -16,14 +16,6 @@ public class WoahCodingEffects {
                     StatusEffectCategory.HARMFUL,
                     Colors.RED
             )
-            /*
-                    .addAttributeModifier(
-                    EntityAttributes.MOVEMENT_SPEED,
-                    Identifier.of(WoahCoding.MOD_ID, "iron_maiden_effect"),
-                    -0.25f,
-                    EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
-            )
-            */
     );
 
     @SuppressWarnings("SameParameterValue")

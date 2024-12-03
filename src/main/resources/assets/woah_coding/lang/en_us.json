@@ -11,10 +11,10 @@
   "item.woah_coding.blue_cloud_bottle": "Bottled Cloud",
   "item.woah_coding.cloud_walker_armor_trim_smithing_template": "Smithing Template",
 
-  "item.minecraft.potion.effect.iron_maiden_potion": "Iron Maiden Potion",
-  "item.minecraft.splash_potion.effect.iron_maiden_potion": "Iron Maiden Splash Potion",
-  "item.minecraft.lingering_potion.effect.iron_maiden_potion": "Iron Maiden Lingering Potion",
-  "item.minecraft.tipped_arrow.effect.iron_maiden_potion": "Iron Maiden Potion Tipped Arrow",
+  "item.minecraft.potion.effect.iron_maiden_potion": "Potion of the Iron Maiden",
+  "item.minecraft.splash_potion.effect.iron_maiden_potion": "Splash Potion of the Iron Maiden",
+  "item.minecraft.lingering_potion.effect.iron_maiden_potion": "Lingering Potion of the Iron Maiden",
+  "item.minecraft.tipped_arrow.effect.iron_maiden_potion": "Arrow of the Iron Maiden",
 
   "block.woah_coding.fading_cloud_block": "Fading Block",
 
