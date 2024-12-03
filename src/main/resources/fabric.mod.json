@@ -19,6 +19,9 @@
     ],
     "main": [
       "me.lemo.woah_coding.WoahCoding"
+    ],
+    "fabric-datagen": [
+      "me.lemo.woah_coding.datagen.WoahCodingDataGenerator"
     ]
   },
   "mixins": [

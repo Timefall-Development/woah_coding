@@ -16,5 +16,7 @@ public class WoahCoding implements ModInitializer {
         WoahCodingBlocks.register();
         WoahCodingBlockEntities.register();
         WoahCodingItemGroups.register();
+        WoahCodingEffects.register();
+        WoahCodingPotions.register();
     }
 }

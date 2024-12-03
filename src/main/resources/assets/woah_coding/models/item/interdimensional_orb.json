@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "woah_coding:item/woah_orb"
+    "layer0": "woah_coding:item/interdimensional_orb"
   }
 }

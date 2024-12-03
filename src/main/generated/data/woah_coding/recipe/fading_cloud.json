@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "woah_coding:pink_cloud_bottle",
+    "woah_coding:lilac_cloud_bottle",
+    "woah_coding:lavender_cloud_bottle",
+    "woah_coding:purple_cloud_bottle",
+    "woah_coding:blue_cloud_bottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "woah_coding:fading_cloud"
+  }
+}

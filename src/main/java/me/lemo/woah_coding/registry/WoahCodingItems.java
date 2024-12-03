@@ -14,11 +14,11 @@ import net.minecraft.registry.RegistryKeys;
 @SuppressWarnings("unused")
 public class WoahCodingItems {
     public static final Item INTERDIMENSIONAL_ORB_ITEM = itemRegister(
-            new InterdimensionalOrbItem(new Item.Settings().registryKey(getItemRegistryKey("Interdimensional_orb"))), "interdimensional_orb"
+            new InterdimensionalOrbItem(new Item.Settings().maxDamage(256).registryKey(getItemRegistryKey("interdimensional_orb"))), "interdimensional_orb"
     );
 
     public static final Item OUTPUT_ITEM = itemRegister(
-            new OutputItem(new Item.Settings()), "output_item"
+            new OutputItem(new Item.Settings().registryKey(getItemRegistryKey("output_item"))), "output_item"
     );
 
     public static final Item FADING_CLOUD_ITEM = itemRegister(
