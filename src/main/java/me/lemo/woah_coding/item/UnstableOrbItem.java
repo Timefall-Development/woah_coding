@@ -11,6 +11,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 
 public class UnstableOrbItem extends Item {
@@ -42,6 +44,21 @@ public class UnstableOrbItem extends Item {
                 } else {
                     playerTargetPos = new BlockPos(playerStartPos.getX() / 8, playerStartPos.getY(), playerStartPos.getZ() / 8);
                 }
+
+                serverPlayerEntity.teleportTo(
+                        new TeleportTarget(
+                                targetWorld,
+                                new Vec3d(
+                                        playerTargetPos.getX(),
+                                        playerTargetPos.getY(),
+                                        playerTargetPos.getZ()
+                                ),
+                                Vec3d.ZERO,
+                                serverPlayerEntity.getYaw(),
+                                serverPlayerEntity.getPitch(),
+                                TeleportTarget.ADD_PORTAL_CHUNK_TICKET
+                        )
+                );
             }
         }
         // chat gpt helped find where the return statement went (i was 1 line too low D: )

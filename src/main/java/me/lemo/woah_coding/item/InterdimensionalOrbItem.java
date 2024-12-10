@@ -43,10 +43,16 @@ public class InterdimensionalOrbItem extends Item {
 
                 //the math used for teleporting the player through dimensions
                 if (currentWorldKey == World.NETHER){
-                    playerTargetPos = new BlockPos(playerStartPos.getX() * 8, playerStartPos.getY(), playerStartPos.getZ() * 8);
+                    playerTargetPos = new BlockPos(
+                            playerStartPos.getX() * 8,
+                            playerStartPos.getY(),
+                            playerStartPos.getZ() * 8);
 
                 } else {
-                    playerTargetPos = new BlockPos(playerStartPos.getX() / 8, playerStartPos.getY(), playerStartPos.getZ() / 8);
+                    playerTargetPos = new BlockPos(
+                            playerStartPos.getX() / 8,
+                            playerStartPos.getY(),
+                            playerStartPos.getZ() / 8);
                 }
 
                 //finding a safe location to teleport the player to using the location data above
