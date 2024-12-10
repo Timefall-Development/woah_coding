@@ -61,7 +61,7 @@ public class UnstableOrbItem extends Item {
                 );
             }
         }
-        // chat gpt helped find where the return statement went (i was 1 line too low D: )
+        // chat gpt helped find where the return statement went (i was 1 line off D: )
         return super.use(world, playerEntity, hand);
     }
 }

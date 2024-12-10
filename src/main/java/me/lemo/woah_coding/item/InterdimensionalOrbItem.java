@@ -150,12 +150,12 @@ public class InterdimensionalOrbItem extends Item {
 
 /*TODO
     Teleport player to nether when in overworld and vice versa ✓
-        - player pos in current dimension
-        - get target pos
+        - player pos in current dimension ✓
+        - get target pos ✓
     make sure they dont spawn in a wall or in lava or above the roof ✓
-        - avoid lava beneath you, air beneath you, or the position shared with a block
-        - get y coordinate of player
+        - avoid lava beneath you, air beneath you, or the position shared with a block ✓
+        - get y coordinate of player ✓
     add cooldown ✓
-        -????
+        -???? ?
     add durability ✓
  */
