@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "woah_coding:block/creeper_in_a_box_bottom",
+    "front": "woah_coding:block/creeper_in_a_box_front",
+    "side": "woah_coding:block/creeper_in_a_box_side",
+    "top": "woah_coding:block/creeper_in_a_box_top"
+  }
+}
