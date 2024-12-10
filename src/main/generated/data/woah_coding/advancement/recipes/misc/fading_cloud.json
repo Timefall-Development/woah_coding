@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blue_cloud_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "woah_coding:blue_cloud_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lavender_cloud_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "woah_coding:lavender_cloud_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lilac_cloud_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "woah_coding:lilac_cloud_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pink_cloud_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "woah_coding:pink_cloud_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_purple_cloud_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "woah_coding:purple_cloud_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "woah_coding:fading_cloud"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pink_cloud_bottle",
+      "has_lilac_cloud_bottle",
+      "has_lavender_cloud_bottle",
+      "has_purple_cloud_bottle",
+      "has_blue_cloud_bottle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "woah_coding:fading_cloud"
+    ]
+  }
+}

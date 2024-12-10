@@ -50,7 +50,7 @@ public class WoahCodingRecipeProvider extends FabricRecipeProvider {
                       .criterion("entered_nether", ChangedDimensionCriterion.Conditions.to(World.NETHER))
                       .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE, 1)
+                createShaped(RecipeCategory.MISC, WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE, 1)
                         .pattern("#C#")
                         .pattern("#D#")
                         .pattern("###")
@@ -58,7 +58,7 @@ public class WoahCodingRecipeProvider extends FabricRecipeProvider {
                         .input('C', WoahCodingItems.FADING_CLOUD_ITEM)
                         .input('#', WoahCodingTags.Items.CLOUD_BOTTLES)
                         .criterion(hasItem(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE), conditionsFromItem(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE))
-                        .offerTo(exporter);
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.ofVanilla(getItemPath(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE) + "_duplicate")));
 
                 offerSmithingTemplateCopyingRecipe(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE, ingredientFromTag(WoahCodingTags.Items.CLOUD_BOTTLES));
 

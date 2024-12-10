@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#woah_coding:cloud_bottles",
+    "C": "woah_coding:fading_cloud",
+    "D": "minecraft:diamond"
+  },
+  "pattern": [
+    "#C#",
+    "#D#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "woah_coding:cloud_walker_armor_trim_smithing_template"
+  }
+}

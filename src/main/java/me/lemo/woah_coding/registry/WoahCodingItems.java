@@ -2,8 +2,9 @@ package me.lemo.woah_coding.registry;
 
 import me.lemo.woah_coding.WoahCoding;
 import me.lemo.woah_coding.item.FadingCloudItem;
-import me.lemo.woah_coding.item.OutputItem;
 import me.lemo.woah_coding.item.InterdimensionalOrbItem;
+import me.lemo.woah_coding.item.OutputItem;
+import me.lemo.woah_coding.item.UnstableOrbItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SmithingTemplateItem;
 import net.minecraft.registry.Registries;
@@ -15,6 +16,10 @@ import net.minecraft.registry.RegistryKeys;
 public class WoahCodingItems {
     public static final Item INTERDIMENSIONAL_ORB_ITEM = itemRegister(
             new InterdimensionalOrbItem(new Item.Settings().maxDamage(256).registryKey(getItemRegistryKey("interdimensional_orb"))), "interdimensional_orb"
+    );
+
+    public static final Item UNSTABLE_ORB_ITEM = itemRegister(
+            new UnstableOrbItem(new Item.Settings().maxDamage(128).registryKey(getItemRegistryKey("unstable_orb"))), "unstable_orb"
     );
 
     public static final Item OUTPUT_ITEM = itemRegister(

@@ -21,6 +21,7 @@ public class WoahCodingItemGroups {
             .displayName(Text.translatable("itemGroup." + WoahCoding.MOD_ID))
             .entries(((displayContext, entries) -> {
                 entries.add(WoahCodingItems.INTERDIMENSIONAL_ORB_ITEM);
+                entries.add(WoahCodingItems.UNSTABLE_ORB_ITEM);
                 entries.add(WoahCodingItems.OUTPUT_ITEM);
                 entries.add(WoahCodingItems.FADING_CLOUD_ITEM);
                 entries.add(WoahCodingItems.PINK_CLOUD_BOTTLE_ITEM);
