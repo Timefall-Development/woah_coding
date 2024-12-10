@@ -12,6 +12,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 
@@ -26,6 +27,7 @@ public class UnstableOrbItem extends Item {
             MinecraftServer server = playerEntity.getServer();
             if (server == null) return super.use(world, playerEntity, hand);
             ServerWorld targetWorld;
+            int woahCoding$RandomInt = Random.create().nextInt(60);
 
             RegistryKey<World> currentWorldKey = playerEntity.getWorld().getRegistryKey();
             RegistryKey<World> targetWorldKey = currentWorldKey == World.NETHER
@@ -59,6 +61,7 @@ public class UnstableOrbItem extends Item {
                                 TeleportTarget.ADD_PORTAL_CHUNK_TICKET
                         )
                 );
+                serverPlayerEntity.getItemCooldownManager().set(this.getDefaultStack(), woahCoding$RandomInt);
             }
         }
         // chat gpt helped find where the return statement went (i was 1 line off D: )
