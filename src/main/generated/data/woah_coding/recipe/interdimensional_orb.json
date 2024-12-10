@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:ender_pearl",
+    "O": "minecraft:obsidian"
+  },
+  "pattern": [
+    " O ",
+    "OEO",
+    " O "
+  ],
+  "result": {
+    "count": 1,
+    "id": "woah_coding:interdimensional_orb"
+  }
+}
