@@ -54,20 +54,8 @@ public class WoahCodingItems {
             "cloud_walker_armor_trim_smithing_template", new Item.Settings().registryKey(getItemRegistryKey("cloud_walker_armor_trim_smithing_template"))
     );
 
-    public static final Item BRONZE_INGOT = itemRegister(
-           new Item(new Item.Settings().registryKey(getItemRegistryKey("bronze_ingot"))), "bronze_ingot"
-    );
-
-    public static final Item TIN_INGOT = itemRegister(
-            new Item(new Item.Settings().registryKey(getItemRegistryKey("tin_ingot"))), "tin_ingot"
-    );
-
-    public static final Item ALUMINUM_INGOT = itemRegister(
-            new Item(new Item.Settings().registryKey(getItemRegistryKey("aluminum_ingot"))), "aluminum_ingot"
-    );
-
-    public static final Item ANCIENT_INSTRUCTIONS = itemRegister(
-            new Item(new Item.Settings().registryKey(getItemRegistryKey("ancient_instructions"))), "ancient_instructions"
+    public static final Item COPPER_TOKEN_ITEM = itemRegister(
+            new Item(new Item.Settings().registryKey(getItemRegistryKey("copper_token"))), "copper_token"
     );
 
     //public static final Item CREEPER_IN_A_BOX_BLOCK_ITEM = itemRegister(

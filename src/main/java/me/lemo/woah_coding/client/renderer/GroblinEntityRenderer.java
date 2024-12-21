@@ -15,24 +15,13 @@ public class GroblinEntityRenderer extends BipedEntityRenderer<GroblinEntity, Bi
     private static final Identifier TEXTURE = Identifier.of("woah_coding", "textures/entity/groblin_entity.png");
 
     public GroblinEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new GroblinEntityModel(context.getPart(WoahCodingEntityModelLayers.GROBLIN_ENTITY_MODEL_LAYER)), 0.5f);
+        super(context, new GroblinEntityModel(context.getPart(WoahCodingEntityModelLayers.GROBLIN_ENTITY_MODEL_LAYER)), 0.2f);
     }
 
     @Override
     public BipedEntityRenderState createRenderState() {
         return new BipedEntityRenderState();
     }
-
-
-    //@Override
-    //public Identifier getTexture(GroblinEntityRenderState state) {
-    //    return TEXTURE;
-    //}
-
-    //@Override
-    //public GroblinEntityRenderState createRenderState() {
-    //    return new GroblinEntityRenderState();
-    //}
 
     @Override
     public Identifier getTexture(BipedEntityRenderState state) {

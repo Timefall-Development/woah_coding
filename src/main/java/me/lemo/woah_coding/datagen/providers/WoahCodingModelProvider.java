@@ -29,11 +29,13 @@ public class WoahCodingModelProvider extends FabricModelProvider {
         itemModelGenerator.register(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(WoahCodingItems.FADING_CLOUD_ITEM, Models.GENERATED);
         itemModelGenerator.register(WoahCodingItems.INTERDIMENSIONAL_ORB_ITEM, Models.GENERATED);
+        itemModelGenerator.register(WoahCodingItems.UNSTABLE_ORB_ITEM, Models.GENERATED);
         itemModelGenerator.register(WoahCodingItems.LAVENDER_CLOUD_BOTTLE_ITEM, Models.GENERATED);
         itemModelGenerator.register(WoahCodingItems.LILAC_CLOUD_BOTTLE_ITEM, Models.GENERATED);
         itemModelGenerator.register(WoahCodingItems.OUTPUT_ITEM, Models.GENERATED);
         itemModelGenerator.register(WoahCodingItems.PINK_CLOUD_BOTTLE_ITEM, Models.GENERATED);
         itemModelGenerator.register(WoahCodingItems.PURPLE_CLOUD_BOTTLE_ITEM, Models.GENERATED);
+        itemModelGenerator.register(WoahCodingItems.COPPER_TOKEN_ITEM, Models.GENERATED);
     }
 
     /**

@@ -29,6 +29,7 @@ public class WoahCodingItemGroups {
                 entries.add(WoahCodingItems.LAVENDER_CLOUD_BOTTLE_ITEM);
                 entries.add(WoahCodingItems.LILAC_CLOUD_BOTTLE_ITEM);
                 entries.add(WoahCodingItems.BLUE_CLOUD_BOTTLE_ITEM);
+                entries.add(WoahCodingItems.COPPER_TOKEN_ITEM);
                 entries.add(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE);
                 entries.add(WoahCodingBlocks.CREEPER_IN_A_BOX_BLOCK.asItem());
                 entries.add(WoahCodingBlocks.BEE_IN_A_BOX_BLOCK.asItem());

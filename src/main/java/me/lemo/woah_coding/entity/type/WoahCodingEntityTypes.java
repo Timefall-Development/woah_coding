@@ -12,10 +12,10 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 
 public class WoahCodingEntityTypes {
-    public static final EntityType<GroblinEntity> GROBLIN_ENTITY_ENTITY_TYPE = registerEntityType("groblin", EntityType.Builder.create(GroblinEntity::new, SpawnGroup.MISC).dimensions(0.6f, 0.6f));
+    public static final EntityType<GroblinEntity> GROBLIN_ENTITY_ENTITY_TYPE = registerEntityType("groblin", EntityType.Builder.create(GroblinEntity::new, SpawnGroup.MISC).dimensions(0.3f, 0.6f));
 
     public static void registerAttributes() {
-        FabricDefaultAttributeRegistry.register(GROBLIN_ENTITY_ENTITY_TYPE, GroblinEntity.createAnimalAttributes());
+        FabricDefaultAttributeRegistry.register(GROBLIN_ENTITY_ENTITY_TYPE, GroblinEntity.createGroblinAttributes());
     }
 
     public static <T extends Entity> EntityType<T> registerEntityType(String path, EntityType.Builder<T> entityTypeBuilder) {
