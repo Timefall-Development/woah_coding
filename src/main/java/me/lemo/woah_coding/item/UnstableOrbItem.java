@@ -60,6 +60,21 @@ public class UnstableOrbItem extends Item {
                         )
                 );
                 serverPlayerEntity.getItemCooldownManager().set(this.getDefaultStack(), woahCoding$RandomInt);
+
+                serverPlayerEntity.teleportTo(
+                        new TeleportTarget(
+                                targetWorld,
+                                new Vec3d(
+                                        playerTargetPos.getX(),
+                                        playerTargetPos.getY(),
+                                        playerTargetPos.getZ()
+                                ),
+                                Vec3d.ZERO,
+                                serverPlayerEntity.getYaw(),
+                                serverPlayerEntity.getPitch(),
+                                TeleportTarget.ADD_PORTAL_CHUNK_TICKET
+                        )
+                );
             }
         }
         // chat gpt helped find where the return statement went (i was 1 line off D: )

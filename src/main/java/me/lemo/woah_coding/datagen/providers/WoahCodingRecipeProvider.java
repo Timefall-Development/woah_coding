@@ -5,9 +5,11 @@ import me.lemo.woah_coding.registry.tag.WoahCodingTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancement.criterion.ChangedDimensionCriterion;
+import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -59,6 +61,14 @@ public class WoahCodingRecipeProvider extends FabricRecipeProvider {
                         .input('#', WoahCodingTags.Items.CLOUD_BOTTLES)
                         .criterion(hasItem(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE), conditionsFromItem(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.ofVanilla(getItemPath(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE) + "_duplicate")));
+
+                CookingRecipeJsonBuilder.createBlasting(
+                        Ingredient.ofItem(WoahCodingItems.INTERDIMENSIONAL_ORB_ITEM),
+                        RecipeCategory.TRANSPORTATION,
+                        WoahCodingItems.UNSTABLE_ORB_ITEM,
+                        2,
+                        100
+                ).offerTo(exporter);
 
                 offerSmithingTemplateCopyingRecipe(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE, ingredientFromTag(WoahCodingTags.Items.CLOUD_BOTTLES));
 
