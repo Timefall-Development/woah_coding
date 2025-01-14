@@ -34,7 +34,15 @@ public class GroblinEntity extends AnimalEntity {
 
     public static final List<Item> GROBLIN_TRADE_ITEMS =
             List.of(
-                    Items.AMETHYST_SHARD, Items.DIAMOND, Items.PURPLE_BUNDLE, Items.RAW_IRON, Items.RAW_GOLD, Items.SPIDER_EYE, Items.GUNPOWDER, PotionContentsComponent.createStack(Items.POTION, WoahCodingPotions.HIGH_GRAVITY_POTION).getItem(), Items.POTATO
+                    Items.AMETHYST_SHARD,
+                    Items.DIAMOND,
+                    Items.PURPLE_BUNDLE,
+                    Items.RAW_IRON,
+                    Items.RAW_GOLD,
+                    Items.SPIDER_EYE,
+                    Items.GUNPOWDER,
+                    PotionContentsComponent.createStack(Items.POTION, WoahCodingPotions.HIGH_GRAVITY_POTION).getItem(),
+                    Items.POTATO
             );
 
     public GroblinEntity(EntityType<? extends AnimalEntity> entityType, World world) {

@@ -1,6 +1,7 @@
 package me.lemo.woah_coding;
 
 import me.lemo.woah_coding.entity.type.WoahCodingEntityTypes;
+import me.lemo.woah_coding.loot.WoahCodingLootTables;
 import me.lemo.woah_coding.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
@@ -20,5 +21,8 @@ public class WoahCoding implements ModInitializer {
         WoahCodingItemGroups.register();
         WoahCodingEffects.register();
         WoahCodingPotions.register();
+        WoahCodingLootTables.registerLootTables();
+        WoahCodingMemoryModuleTypes.registerMemoryModuleTypes();
+        WoahCodingSensorTypes.registerSensorTypes();
     }
 }

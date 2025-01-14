@@ -55,28 +55,4 @@ public class GroblinEntityModel extends BipedEntityModel<BipedEntityRenderState>
 
         return TexturedModelData.of(modelData, 32, 32);
     }
-
-    /*
-    @Override
-    public void setAngles(GroblinEntityRenderState state) {
-        super.setAngles(state);
-    }
-
-
-    @Override
-    protected ModelPart getArm(Arm arm) {
-        return arm == Arm.LEFT ? this.left_arm : this.right_arm;
-    }
-
-    @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-        head.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        body.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        right_arm.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        right_leg.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        left_leg.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        left_arm.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-    }
-    */
-
 }
