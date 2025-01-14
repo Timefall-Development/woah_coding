@@ -18,6 +18,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -64,6 +65,17 @@ public class WoahCodingRecipeProvider extends FabricRecipeProvider {
                         .input('#', WoahCodingTags.Items.CLOUD_BOTTLES)
                         .criterion(hasItem(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE), conditionsFromItem(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.ofVanilla(getItemPath(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE) + "_duplicate")));
+
+                offerBlasting(
+                        ImmutableList.of(
+                                WoahCodingItems.INTERDIMENSIONAL_ORB_ITEM
+                        ),
+                        RecipeCategory.MISC,
+                        WoahCodingItems.UNSTABLE_ORB_ITEM,
+                        2,
+                        300,
+                        "string_id_of_blasting_recipe_result"
+                );
 
                 offerSmithingTemplateCopyingRecipe(WoahCodingItems.CLOUD_WALKER_ARMOR_TRIM_SMITHING_TEMPLATE, ingredientFromTag(WoahCodingTags.Items.CLOUD_BOTTLES));
 
