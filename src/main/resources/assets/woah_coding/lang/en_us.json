@@ -10,12 +10,16 @@
   "item.woah_coding.purple_cloud_bottle": "Bottled Cloud",
   "item.woah_coding.blue_cloud_bottle": "Bottled Cloud",
   "item.woah_coding.cloud_walker_armor_trim_smithing_template": "Smithing Template",
+  "item.woah_coding.copper_token": "Copper Token",
   "item.minecraft.potion.effect.high_gravity_potion": "Potion of High Gravity",
   "item.minecraft.lingering_potion.effect.high_gravity_potion": "Lingering Potion of High Gravity",
   "item.minecraft.splash_potion.effect.high_gravity_potion": " Splash Potion of High Gravity",
   "item.minecraft.tipped_arrow.effect.high_gravity_potion": "Arrow of High Gravity",
 
   "block.woah_coding.fading_cloud_block": "Fading Block",
+
+  "painting.woah_coding.inspiration.title": "Inspiration",
+  "painting.woah_coding.inspiration.author": "Lemo",
 
   "trim_pattern.woah_coding.cloud_walker_armor_trim_smithing_template": "Cloud Walker Armor Trim",
 

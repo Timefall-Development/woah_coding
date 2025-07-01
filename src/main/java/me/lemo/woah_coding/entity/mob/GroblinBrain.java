@@ -62,7 +62,7 @@ public class GroblinBrain {
         // Add the idle activities to the brain. These activities are used when the entity is not doing anything else.
         addIdleActivities(brain);
 
-        // Add the admire item activities to the brain. These activities are used when the entity is admiring an item.
+        // Add the admire item activities to the brain. These activities are used when the entity is admiring an ite  .
         addAdmireItemActivities(brain);
 
         // Add the fight activities to the brain. These activities are used when the entity is fighting.
