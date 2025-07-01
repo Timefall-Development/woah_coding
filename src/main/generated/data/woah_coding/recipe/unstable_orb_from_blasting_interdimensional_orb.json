@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 2.0,
+  "group": "string_id_of_blasting_recipe_result",
+  "ingredient": "woah_coding:interdimensional_orb",
+  "result": {
+    "id": "woah_coding:unstable_orb"
+  }
+}

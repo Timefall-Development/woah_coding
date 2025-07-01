@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_interdimensional_orb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "woah_coding:interdimensional_orb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:unstable_orb_from_blasting_interdimensional_orb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_interdimensional_orb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:unstable_orb_from_blasting_interdimensional_orb"
+    ]
+  }
+}
