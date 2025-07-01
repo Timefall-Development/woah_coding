@@ -7,7 +7,6 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -27,27 +26,36 @@ public class BeeInABoxBlockEntity extends BlockEntity {
         this.popCounter2++;
         markDirty();
 
-        int woahCoding$RandomInt = Random.create().nextInt(10);
+        int woahCoding$RandomInt = Random.create().nextBetween(1, 10);
         if ( this.getWorld() instanceof ServerWorld serverWorld && this.popCounter2 % woahCoding$RandomInt == 0){
             EntityType.BEE.spawn(serverWorld, this.getPos().up(), SpawnReason.TRIGGERED);
         }
+
+        if (popCounter2 >= 11) this.popCounter2 = 1;
     }
 
     @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
+        super.writeNbt(nbt, registryLookup);
         var woahCoding$Data = new NbtCompound();
         woahCoding$Data.putInt("popCounter2", this.popCounter2);
         nbt.put(WoahCoding.MOD_ID, woahCoding$Data);
-        super.writeNbt(nbt,registryLookup);
     }
 
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        if (nbt.contains(WoahCoding.MOD_ID, NbtElement.COMPOUND_TYPE)){
-            var woahCoding$Data = nbt.getCompound(WoahCoding.MOD_ID);
-            this.popCounter2 = woahCoding$Data.contains("popCounter2", NbtElement.INT_TYPE)
-                    ? woahCoding$Data.getInt("popCounter2")
-                    : 0;
-        }
+        super.readNbt(nbt, registryLookup);
+
+        var woahCoding$Data = nbt.getCompoundOrEmpty(WoahCoding.MOD_ID);
+        this.popCounter2 = woahCoding$Data.getInt("popCounter2", 1);
+
+
+
+        //if (nbt.contains(WoahCoding.MOD_ID, NbtElement.COMPOUND_TYPE)){
+            //var woahCoding$Data = nbt.getCompound(WoahCoding.MOD_ID);
+            //this.popCounter2 = woahCoding$Data.contains("popCounter2", NbtElement.INT_TYPE)
+            //        ? woahCoding$Data.getInt("popCounter2")
+            //        : 0;
+        //}
     }
 }

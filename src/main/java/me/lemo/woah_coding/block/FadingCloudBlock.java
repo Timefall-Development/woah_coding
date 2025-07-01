@@ -76,6 +76,7 @@ public class FadingCloudBlock extends TransparentBlock {
 
     @Override
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+
         if (
                 (
                         random.nextInt(4) == 0

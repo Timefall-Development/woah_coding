@@ -1,7 +1,10 @@
 package me.lemo.woah_coding.registry;
 
 import me.lemo.woah_coding.WoahCoding;
-import me.lemo.woah_coding.item.*;
+import me.lemo.woah_coding.item.FadingCloudItem;
+import me.lemo.woah_coding.item.InterdimensionalOrbItem;
+import me.lemo.woah_coding.item.OutputItem;
+import me.lemo.woah_coding.item.UnstableOrbItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SmithingTemplateItem;
 import net.minecraft.registry.Registries;

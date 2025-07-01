@@ -1,3 +1,4 @@
+/*
 package me.lemo.woah_coding.client.renderer.entity.model;
 
 import me.lemo.woah_coding.WoahCoding;
@@ -13,3 +14,5 @@ public class WoahCodingEntityModelLayers {
         return new EntityModelLayer(WoahCoding.id(path), layer);
     }
 }
+
+ */

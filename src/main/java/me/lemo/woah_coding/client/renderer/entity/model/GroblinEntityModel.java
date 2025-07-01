@@ -1,4 +1,4 @@
-
+/*
 package me.lemo.woah_coding.client.renderer.entity.model;
 
 import net.minecraft.client.model.*;
@@ -56,3 +56,5 @@ public class GroblinEntityModel extends BipedEntityModel<BipedEntityRenderState>
         return TexturedModelData.of(modelData, 32, 32);
     }
 }
+
+ */

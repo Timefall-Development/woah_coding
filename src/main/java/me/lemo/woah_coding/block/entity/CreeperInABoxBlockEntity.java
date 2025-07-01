@@ -7,7 +7,6 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -27,10 +26,11 @@ public class CreeperInABoxBlockEntity extends BlockEntity {
         this.popCounter++;
         markDirty();
 
-        int woahCoding$RandomInt = Random.create().nextInt(10);
+        int woahCoding$RandomInt = Random.create().nextBetween(1, 10);
         if ( this.getWorld() instanceof ServerWorld serverWorld && this.popCounter % woahCoding$RandomInt == 0){
             EntityType.CREEPER.spawn(serverWorld, this.getPos().up(), SpawnReason.TRIGGERED);
         }
+        if (popCounter >= 11) this.popCounter = 1;
     }
 
     @Override
@@ -41,13 +41,22 @@ public class CreeperInABoxBlockEntity extends BlockEntity {
         super.writeNbt(nbt,registryLookup);
     }
 
+    //@Override
+    //protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
+    //    if (nbt.contains(WoahCoding.MOD_ID, NbtElement.COMPOUND_TYPE)){
+    //        var woahCoding$Data = nbt.getCompound(WoahCoding.MOD_ID);
+    //        this.popCounter = woahCoding$Data.contains("popCounter", NbtElement.INT_TYPE)
+    //                ? woahCoding$Data.getInt("popCounter")
+    //                : 0;
+    //    }
+    //}
+
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        if (nbt.contains(WoahCoding.MOD_ID, NbtElement.COMPOUND_TYPE)){
-            var woahCoding$Data = nbt.getCompound(WoahCoding.MOD_ID);
-            this.popCounter = woahCoding$Data.contains("popCounter", NbtElement.INT_TYPE)
-                    ? woahCoding$Data.getInt("popCounter")
-                    : 0;
-        }
+        super.readNbt(nbt, registryLookup);
+
+        var woahCoding$Data = nbt.getCompoundOrEmpty(WoahCoding.MOD_ID);
+        this.popCounter = woahCoding$Data.getInt("popCounter", 1);
+
     }
 }

@@ -667,15 +667,15 @@ public class GroblinBrain {
         return brainyGroblin.getBrain().hasMemoryModule(MemoryModuleType.ADMIRING_DISABLED);
     }
 
-    public static boolean isHoldingEmerald(LivingEntity entity) {
-        for (ItemStack itemStack : entity.getHandItems()) {
-            if (itemStack.isOf(Items.EMERALD)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
+    //public static boolean isHoldingEmerald(LivingEntity entity) {
+    //    for (ItemStack itemStack : entity.getHandItems()) {
+    //        if (itemStack.isOf(Items.EMERALD)) {
+    //            return true;
+    //        }
+    //    }
+//
+    //    return false;
+    //}
 
     private static boolean isPreferredAttackTarget(ServerWorld world, BrainyGroblinEntity brainyGroblin, LivingEntity target) {
         return getPreferredTarget(world, brainyGroblin).filter(preferredTarget -> preferredTarget == target).isPresent();

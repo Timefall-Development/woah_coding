@@ -1,3 +1,4 @@
+/*
 package me.lemo.woah_coding.client.renderer;
 
 import me.lemo.woah_coding.client.renderer.entity.model.GroblinEntityModel;
@@ -29,3 +30,5 @@ public class BrainyGroblinEntityRenderer extends BipedEntityRenderer<BrainyGrobl
         return TEXTURE;
     }
 }
+
+ */

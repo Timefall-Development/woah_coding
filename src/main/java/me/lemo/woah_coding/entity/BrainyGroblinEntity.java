@@ -210,7 +210,7 @@ public class BrainyGroblinEntity extends PathAwareEntity implements InventoryOwn
     public void equipToOffHand(ItemStack stack) {
         if (stack.isOf(GroblinBrain.BARTERING_ITEM)) {
             this.equipStack(EquipmentSlot.OFFHAND, stack);
-            this.updateDropChances(EquipmentSlot.OFFHAND);
+            //this.updateDropChances(EquipmentSlot.OFFHAND);
         } else {
             this.equipLootStack(EquipmentSlot.OFFHAND, stack);
         }

@@ -1,3 +1,4 @@
+/*
 package me.lemo.woah_coding.datagen.providers;
 
 import me.lemo.woah_coding.WoahCoding;
@@ -45,6 +46,7 @@ public class WoahCodingModelProvider extends FabricModelProvider {
      * @param blockStateModelGenerator The generator used to create block state models.
      * @param block The block to register the model for.
      */
+/*
     private void registerInABoxBlock(BlockStateModelGenerator blockStateModelGenerator, Block block) {
         // Get the identifiers for the bottom, front, side, and top textures of the block.
         Identifier identifierBottom = WoahCoding.id("block/creeper_in_a_box_bottom");
@@ -126,3 +128,4 @@ public class WoahCodingModelProvider extends FabricModelProvider {
     }
 
 }
+*/

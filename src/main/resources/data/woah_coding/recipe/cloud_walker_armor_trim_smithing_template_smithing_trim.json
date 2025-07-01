@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smithing_trim",
-  "addition": "#minecraft:trim_materials",
-  "base": "#minecraft:trimmable_armor",
+  "addition": "woah_coding:fading_cloud",
+  "base": "#woah_coding:vanilla_boots",
   "template": "woah_coding:cloud_walker_armor_trim_smithing_template"
 }

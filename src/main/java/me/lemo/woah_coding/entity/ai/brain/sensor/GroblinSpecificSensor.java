@@ -1,7 +1,6 @@
 package me.lemo.woah_coding.entity.ai.brain.sensor;
 
 import com.google.common.collect.ImmutableSet;
-import me.lemo.woah_coding.entity.mob.GroblinBrain;
 import me.lemo.woah_coding.registry.WoahCodingMemoryModuleTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -45,6 +44,7 @@ public class GroblinSpecificSensor extends Sensor<LivingEntity> {
         Optional<PlayerEntity> optionalPotentialBarteringPlayer = Optional.empty();
         int creeperCount = 0;
 
+        /*
         for (LivingEntity livingEntity : livingTargetCache.iterate(livingEntityx -> true)) {
             if (livingEntity instanceof PlayerEntity playerEntity) {
                 if (optionalTargetablePlayer.isEmpty() && GroblinBrain.isHoldingEmerald(playerEntity) && entity.canTarget(livingEntity)) {
@@ -70,6 +70,8 @@ public class GroblinSpecificSensor extends Sensor<LivingEntity> {
                 }
             }
         }
+
+         */
 
         brain.remember(WoahCodingMemoryModuleTypes.NEAREST_TARGETABLE_PLAYER_HOLDING_EMERALD, optionalTargetablePlayer);
         brain.remember(MemoryModuleType.NEAREST_PLAYER_HOLDING_WANTED_ITEM, optionalPotentialBarteringPlayer);
