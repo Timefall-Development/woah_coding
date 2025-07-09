@@ -6,6 +6,7 @@ import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.render.entity.state.BipedEntityRenderState;
+import net.minecraft.util.math.MathHelper;
 
 public class BrainyGroblinEntityModel extends BipedEntityModel<BipedEntityRenderState> {
     //public static final EntityModelLayer BRAINY_GROBLIN = new EntityModelLayer(Identifier.of(WoahCoding.MOD_ID, "groblin"), "main");
@@ -46,9 +47,52 @@ public class BrainyGroblinEntityModel extends BipedEntityModel<BipedEntityRender
 
         body.addChild("cube_r3", ModelPartBuilder.create().uv(3, 4).cuboid(-2.0F, -2.0F, -1.5F, 4.0F, 0.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 2.0F, 0.0F, 0.0F, 3.1416F, 0.0F));
 
-        modelPartData.addChild(EntityModelPartNames.RIGHT_ARM, ModelPartBuilder.create().uv(18, 3).cuboid(-0.75F, -0.5F, -0.5F, 1.0F, 4.0F, 1.0F, new Dilation(0.0F)), ModelTransform.of(-2.25F, 19.5F, 0.0F, 0.0F, 0.0F, 0.0436F));
+        modelPartData.addChild(
+                EntityModelPartNames.RIGHT_ARM,
+                ModelPartBuilder.create()
+                        .uv(18, 3)
+                        .cuboid(
+                                -0.75F,
+                                -0.5F,
+                                -0.5F,
+                                1.0F,
+                                4.0F,
+                                1.0F,
+                                new Dilation(0.0F)
+                        ),
+                // Originally 19.5F for originY
+                ModelTransform.of(
+                        -2.25F,
+                        19.5F,
+                        0.0F,
+                        0.0F,
+                        0.0F,
+                        0.0436F
+                )
+        );
 
-        modelPartData.addChild(EntityModelPartNames.LEFT_ARM, ModelPartBuilder.create().uv(23, 3).cuboid(-0.25F, -0.5F, -0.5F, 1.0F, 4.0F, 1.0F, new Dilation(0.0F)), ModelTransform.of(2.25F, 19.5F, 0.0F, 0.0F, 0.0F, -0.0436F));
+        modelPartData.addChild(
+                EntityModelPartNames.LEFT_ARM,
+                ModelPartBuilder.create()
+                        .uv(23, 3)
+                        .cuboid(
+                                -0.25F,
+                                -0.5F,
+                                -0.5F,
+                                1.0F,
+                                4.0F,
+                                1.0F,
+                                new Dilation(0.0F)
+                        ),
+                ModelTransform.of(
+                        2.25F,
+                        19.5F,
+                        0.0F,
+                        0.0F,
+                        0.0F,
+                        -0.0436F
+                )
+        );
 
 
         modelPartData.addChild(EntityModelPartNames.RIGHT_LEG, ModelPartBuilder.create().uv(10, 3).cuboid(-0.5F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new Dilation(0.0F)), ModelTransform.origin(-1.0F, 22.0F, 0.0F));

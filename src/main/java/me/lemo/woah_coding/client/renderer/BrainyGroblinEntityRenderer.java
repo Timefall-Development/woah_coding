@@ -1,5 +1,6 @@
 package me.lemo.woah_coding.client.renderer;
 
+import me.lemo.woah_coding.client.renderer.entity.feature.GroblinHeldItemFeatureRenderer;
 import me.lemo.woah_coding.client.renderer.entity.model.GroblinEntityModel;
 import me.lemo.woah_coding.client.renderer.entity.model.WoahCodingEntityModelLayers;
 import me.lemo.woah_coding.entity.BrainyGroblinEntity;
@@ -8,8 +9,11 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.render.entity.state.BipedEntityRenderState;
+import net.minecraft.client.render.item.ItemRenderState;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.Arm;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
@@ -18,6 +22,13 @@ public class BrainyGroblinEntityRenderer extends BipedEntityRenderer<BrainyGrobl
 
     public BrainyGroblinEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new GroblinEntityModel(context.getPart(WoahCodingEntityModelLayers.GROBLIN_ENTITY_MODEL_LAYER)), 0.2f);
+        this.addFeature(new HeldItemFeatureRenderer<BipedEntityRenderState, GroblinEntityModel>(this) {
+            @Override
+            protected void renderItem(BipedEntityRenderState entityState, ItemRenderState itemState, Arm arm, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
+                if (!itemState.isEmpty())
+                    matrices.translate(-0.1, -0.3, 0.0);
+            }
+        });
     }
 
     @Override
