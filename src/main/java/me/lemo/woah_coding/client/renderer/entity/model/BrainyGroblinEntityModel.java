@@ -1,17 +1,15 @@
 package me.lemo.woah_coding.client.renderer.entity.model;
 
 import me.lemo.woah_coding.WoahCoding;
-import me.lemo.woah_coding.client.renderer.entity.state.GroblinEntityRenderState;
+import me.lemo.woah_coding.client.renderer.entity.state.BrainyGroblinEntityRenderState;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
-import net.minecraft.client.render.entity.state.BipedEntityRenderState;
 import net.minecraft.util.Identifier;
 
-public class GroblinEntityModel extends EntityModel<GroblinEntityRenderState> {
-    //public static final EntityModelLayer GROBLIN = new EntityModelLayer(Identifier.of(WoahCoding.MOD_ID, "groblin"), "main");
+public class BrainyGroblinEntityModel extends EntityModel<BrainyGroblinEntityRenderState> {
+    //public static final EntityModelLayer BRAINY_GROBLIN = new EntityModelLayer(Identifier.of(WoahCoding.MOD_ID, "groblin"), "main");
     private final ModelPart head;
     private final ModelPart hat;
     private final ModelPart body;
@@ -20,7 +18,7 @@ public class GroblinEntityModel extends EntityModel<GroblinEntityRenderState> {
     private final ModelPart left_leg;
     private final ModelPart left_arm;
 
-    public GroblinEntityModel(ModelPart modelPart) {
+    public BrainyGroblinEntityModel(ModelPart modelPart) {
         super(modelPart);
         this.head = root.getChild(EntityModelPartNames.HEAD);
         this.hat = this.head.getChild(EntityModelPartNames.HAT);

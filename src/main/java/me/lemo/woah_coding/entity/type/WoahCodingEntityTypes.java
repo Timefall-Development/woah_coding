@@ -11,10 +11,30 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
 
 public class WoahCodingEntityTypes {
-    public static final EntityType<GroblinEntity> GROBLIN_ENTITY_ENTITY_TYPE = registerEntityType("groblin", EntityType.Builder.create(GroblinEntity::new, SpawnGroup.MISC).dimensions(0.3f, 0.6f));
-    public static final EntityType<BrainyGroblinEntity> BRAINY_GROBLIN_ENTITY_ENTITY_TYPE = registerEntityType("brainy_groblin", EntityType.Builder.create(BrainyGroblinEntity::new, SpawnGroup.MISC).dimensions(0.3f, 0.6f));
+
+    //private static final RegistryKey<EntityType<?>> GROBLIN_KEY = RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(WoahCoding.MOD_ID, "groblin"));
+
+    //public static final EntityType<GroblinEntity> GROBLIN_ENTITY = Registry.register(
+    //        Registries.ENTITY_TYPE,
+    //        Identifier.of(WoahCoding.MOD_ID, "groblin"),
+    //        EntityType.Builder.create(GroblinEntity::new, SpawnGroup.MISC)
+    //                .dimensions(0.3f, 0.6f).build(GROBLIN_KEY));
+
+    public static final EntityType<GroblinEntity> GROBLIN_ENTITY_ENTITY_TYPE = registerEntityType(
+            "groblin",
+            EntityType.Builder.create(
+                    GroblinEntity::new,
+                    SpawnGroup.MISC
+            ).dimensions(0.3f, 0.6f));
+    public static final EntityType<BrainyGroblinEntity> BRAINY_GROBLIN_ENTITY_ENTITY_TYPE = registerEntityType(
+            "brainy_groblin",
+            EntityType.Builder.create(
+                    BrainyGroblinEntity::new,
+                    SpawnGroup.MISC
+            ).dimensions(0.3f, 0.6f));
 
     public static void registerAttributes() {
         FabricDefaultAttributeRegistry.register(GROBLIN_ENTITY_ENTITY_TYPE, GroblinEntity.createGroblinAttributes());
