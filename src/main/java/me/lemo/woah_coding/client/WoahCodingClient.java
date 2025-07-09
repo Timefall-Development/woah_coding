@@ -2,7 +2,6 @@
 package me.lemo.woah_coding.client;
 
 import me.lemo.woah_coding.client.renderer.BrainyGroblinEntityRenderer;
-
 import me.lemo.woah_coding.client.renderer.GroblinEntityRenderer;
 import me.lemo.woah_coding.client.renderer.entity.model.GroblinEntityModel;
 import me.lemo.woah_coding.client.renderer.entity.model.WoahCodingEntityModelLayers;
